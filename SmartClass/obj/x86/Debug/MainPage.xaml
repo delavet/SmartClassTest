@@ -1,0 +1,112 @@
+﻿<Page
+    x:Class="SmartClass.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartClass"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Controls="using:SmartClass.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='1' x:Name="VSlogin">
+                <VisualState x:ConnectionId='2' x:Name="wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="STKPNlogin.VerticalAlignment"
+                                Value="Center"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='3' x:Name="narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="STKPNlogin.VerticalAlignment"
+                                Value="Stretch"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill"  
+                        ImageSource="ms-appx:///Assets/mypkuBg.png"/>
+        </Grid.Background>
+        <Controls:MessageShow x:ConnectionId='4' x:Name="MSGlogin">
+        </Controls:MessageShow>
+        <ProgressBar x:ConnectionId='5' IsIndeterminate="True" 
+                     x:Name="PRGRSlogin" 
+                     Visibility="Collapsed"/>
+        <StackPanel x:ConnectionId='6' x:Name="STKPNlogin"
+                    MaxWidth="500">
+            <Image x:ConnectionId='7' x:Name="pkuhelper_icon"
+                   Width="150" Height="150" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   Margin="0,100,0,0" />
+            <TextBox x:ConnectionId='8' x:Name="TXTBXid" 
+                     Opacity="0.6" 
+                     Header="Student ID" 
+                     Margin="55,0,55,10" 
+                     FontSize="20"
+                     BorderBrush="Transparent">
+                <TextBox.InputScope>
+                    <InputScope>
+                        <InputScope.Names>
+                            <InputScopeName NameValue="Number"/>
+                        </InputScope.Names>
+                    </InputScope>
+
+                </TextBox.InputScope>
+            </TextBox>
+
+            <PasswordBox x:ConnectionId='9' x:Name="TXTBXpassword" 
+                         Header="Password" 
+                         Opacity="0.6" 
+                         Margin="55,5,55,10" 
+                         FontSize="20"
+                         BorderBrush="Transparent"/>
+            <StackPanel>
+                <Button x:ConnectionId='10' x:Name="BTNsignUp" 
+                    Content="Sign up" 
+                                           
+                    Margin="70,25,70,10" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Top" 
+                    Height="42" 
+                    FontSize="20"
+                    Style="{StaticResource MyButtonStyle}">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                            <GradientStop Color="#FFFD7EDE" Offset="0"/>
+                            <GradientStop Color="#FFE5FFA7" Offset="0.5"></GradientStop>
+                            <GradientStop Color="#FFA3D4E8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:ConnectionId='11' x:Name="BTNsubmit" 
+                    Content="Sign in" 
+                                           
+                    Margin="70,25,70,10" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Top" 
+                    Height="42" 
+                    FontSize="20"
+                    Style="{StaticResource MyButtonStyle}">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                            <GradientStop Color="#FFFD7EDE" Offset="0"/>
+                            <GradientStop Color="#FFE5FFA7" Offset="0.5"></GradientStop>
+                            <GradientStop Color="#FFA3D4E8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>
+

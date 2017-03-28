@@ -1,0 +1,2 @@
+MainPackage=C:\Users\asus\Documents\Visual Studio 2015\Projects\SmartClass\SmartClass\bin\x86\Debug\SmartClass_1.0.0.0_x86_Debug.appx
+SymbolPackage=C:\Users\asus\Documents\Visual Studio 2015\Projects\SmartClass\SmartClass\AppPackages\SmartClass_1.0.0.0_Debug_Test\SmartClass_1.0.0.0_x86_Debug.appxsym
